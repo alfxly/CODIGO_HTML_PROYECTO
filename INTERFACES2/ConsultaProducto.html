@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Productos</title>
+    <link rel="stylesheet" href="Estilos/ConsultaP.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+        <header>
+            <div class="logo">
+            <img src="IMG/logo.png" alt="Logo">
+            <span>CONSULTAR PRODUCTO</span></div>
+            <nav>
+                <ul>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Servicios</a></li>
+                </ul>
+            </nav>
+        </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Buscar">
+            <button type="button" id="search-button"><img src="search-icon.png" alt="Buscar"></button>
+        </div>
+        <div class="container">
+            <div class="product-container" id="product-container">
+                <h2>INFORMACIÓN DEL PRODUCTO</h2>
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" value="Producto 1" readonly>
+
+                    <label for="detalles">Detalle de producto:</label>
+                    <input type="text" id="detalles" value="Descripción del producto 1" readonly>
+
+                    <label for="fecha">Fecha de caducidad:</label>
+                    <input type="text" id="fecha" value="01/01/2025" readonly>
+
+                    <label for="id">ID:</label>
+                    <input type="text" id="id" value="ID12345" readonly>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        const searchBar = document.getElementById('search-bar');
+        const searchButton = document.getElementById('search-button');
+        const productContainer = document.getElementById('product-container');
+
+        productContainer.style.display = 'none';
+
+        searchButton.addEventListener('click', () => {
+            if (searchBar.value.trim() !== '') {
+                productContainer.style.display = 'block';
+            } else {
+                productContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Servicios</title>
+    <link rel="stylesheet" href="Estilos/ConsultaS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img src="IMG/logo.png" alt="Logo">
+        <span>CONSULTAR SERVICIO</span></div>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="BUSCAR SERVICIO">
+            <button type="button" id="search-button"><img src="search-icon.png" alt="Buscar"></button>
+        </div>
+        <div class="container">
+            <div class="service-container" id="service-container">
+                <h2>INFORMACIÓN DEL SERVICIO</h2>
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" value="Servicio 1" readonly>
+
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" value="Descripción del servicio 1" readonly>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        const searchBar = document.getElementById('search-bar');
+        const searchButton = document.getElementById('search-button');
+        const serviceContainer = document.getElementById('service-container');
+
+        // Ocultar el contenedor del servicio al cargar la página
+        serviceContainer.style.display = 'none';
+
+        // Mostrar el contenedor solo cuando se haga clic en el botón de búsqueda y el campo de búsqueda tenga texto
+        searchButton.addEventListener('click', () => {
+            if (searchBar.value.trim() !== '') {
+                serviceContainer.style.display = 'block';
+            } else {
+                serviceContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

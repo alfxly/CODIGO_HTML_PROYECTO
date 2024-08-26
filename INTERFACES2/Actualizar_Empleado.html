@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Datos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Estilos/ActualizarEmpleados.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="IMG/logo.png" alt="Logo">
+            <span>ACTUALIZAR EMPLEADO</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="data-box">
+            <h2>Datos actuales</h2>
+            <form id="actualizar-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" value="XXXXXXXXXXX" disabled title="Nombre" placeholder="Nombre">
+
+                <label for="rol">Rol:</label>
+                <input type="email" id="rol" value="XXXX@gmail.com" disabled title="Correo electrónico" placeholder="Correo electrónico">
+
+                <label for="usuario">Nombre de usuario:</label>
+                <input type="text" id="usuario" value="*********" disabled title="Nombre de usuario" placeholder="Nombre de usuario">
+
+                <label for="clave">Clave:</label>
+                <input type="password" id="clave" value="*******" disabled title="Clave" placeholder="Clave">
+
+                <button type="button" class="primary-btn" onclick="showUpdateForm()">Actualizar Datos</button>
+            </form>
+        </div>
+
+
+        <div class="data-box hidden" id="update-data">
+            <h2>Datos por actualizar</h2>
+            <form>
+                <label for="new-rol">Rol:</label>
+                <input type="text" id="new-rol" placeholder="Nuevo rol" title="Nuevo rol">
+
+                <label for="new-email">Correo electrónico:</label>
+                <input type="email" id="new-email" placeholder="Nuevo correo electrónico" title="Nuevo correo electrónico">
+
+                <div class="button-group">
+                    <button type="submit" class="primary-btn">Guardar cambios</button>
+                    <button type="button" class="secondary-btn" onclick="hideUpdateForm()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showUpdateForm() {
+            document.getElementById('update-data').classList.remove('hidden');
+        }
+
+        function hideUpdateForm() {
+            document.getElementById('update-data').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

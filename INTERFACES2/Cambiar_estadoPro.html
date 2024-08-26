@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="Estilos/Estado.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="IMG/logo.png" alt="Logo">
+            <span>ESTADO PRODUCTO</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="info-container">
+                <h2>PRODUCTO</h2>
+                <form>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" value="Producto C">
+                    <label for="details">Detalles de producto:</label>
+                    <input type="text" id="details" name="details" value="Descripción del producto C">
+                    <label for="expiry">Fecha de caducidad:</label>
+                    <input type="date" id="expiry" name="expiry" value="2023-10-20">
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" id="quantity" name="quantity" value="50">
+                    <label for="reference">Referencia:</label>
+                    <input type="text" id="reference" name="reference" value="REF789">
+                    <div class="status">
+                        <p>Estado:</p>
+                        <button type="button" class="active" onclick="cambiarEstado('Disponible')">Disponible</button>
+                        <button type="button" class="inactive" onclick="cambiarEstado('No disponible')">No disponible</button>
+                    </div>
+                </form>
+            </div>
+            <div id="confirmacion" class="confirmation-container">
+                <p>¿Desea cambiar el estado del producto?</p>
+                <button type="button" class="active" onclick="confirmarCambio()">SI</button> <br>
+                <button type="button" class="inactive" onclick="cancelarCambio()">NO</button>
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay"></div>
+
+        <script>
+            function cambiarEstado(estado) {
+                document.getElementById("confirmacion").style.display = "flex";
+                document.getElementById("overlay").style.display = "block";
+            }
+
+            function confirmarCambio() {
+                alert("Estado cambiado con éxito.");
+                cancelarCambio();
+            }
+
+            function cancelarCambio() {
+                document.getElementById("confirmacion").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+            }
+        </script>
+    </main>
+</body>
+</html>

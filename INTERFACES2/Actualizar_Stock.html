@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Stock</title>
+    <link rel="stylesheet" href="Estilos/Stock.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="IMG/logo.png" alt="Logo">
+            <span>ACTUALIZAR STOCK</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="stock-container">
+                <h2>STOCK</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>PRODUCTO</th>
+                            <th>STOCK ACTUAL</th>
+                            <th>STOCK MÍNIMO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Producto 1</td>
+                            <td><input type="number" value="20"></td>
+                            <td><input type="number" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td>Producto 2</td>
+                            <td><input type="number" value="50"></td>
+                            <td><input type="number" value="10"></td>
+                        </tr>
+                        <tr>
+                            <td>Producto 3</td>
+                            <td><input type="number" value="30"></td>
+                            <td><input type="number" value="8"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="confirmation-container">
+                    <button type="button" onclick="mostrarAlerta()">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="alerta" class="alerta-overlay">
+        <div class="alerta-box">
+            <p>¿Desea guardar cambios?</p>
+            <div class="confirmation-buttons">
+                <button type="button" onclick="guardarCambios()">SI</button>
+                <button type="button" onclick="cerrarAlerta()">NO</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarAlerta() {
+            document.getElementById("alerta").style.display = "flex";
+        }
+
+        function cerrarAlerta() {
+            document.getElementById("alerta").style.display = "none";
+        }
+
+        function guardarCambios() {
+            alert("Cambios guardados con éxito.");
+            cerrarAlerta();
+        }
+    </script>
+</body>
+</html>

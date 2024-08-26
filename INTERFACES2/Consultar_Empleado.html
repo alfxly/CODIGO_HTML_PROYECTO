@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Usuario</title>
+    <link rel="stylesheet" href="Estilos/ConsultaE.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+            <header>
+                <div class="logo">
+                <img src="IMG/logo.png" alt="Logo">
+                <span>CONSULTAR EMPLEADO</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="Index.html">Inicio</a></li>
+                        <li><a href="#">Productos</a></li>
+                        <li><a href="#">Servicios</a></li>
+                    </ul>
+                </nav>
+            </header>
+    <main>
+        <div class="search-container">
+            <input type="text" placeholder="BUSCAR" id="searchInput">
+            <button type="button" class="search-button" onclick="buscarUsuario()">&#128269;</button>
+        </div>
+        <div class="form-container" id="userForm" style="display: none;">
+            <div class="form-box">
+                <form>
+                    <label for="nombre-actual">Nombre:</label>
+                    <input type="text" id="nombre-actual" name="nombre-actual" value="XXXXXXXXXXX" disabled>
+
+                    <label for="rol-actual">Rol:</label>
+                    <input type="text" id="rol-actual" name="rol-actual" value="XXXX@gmail.com" disabled>
+
+                    <label for="username-actual">Nombre de usuario:</label>
+                    <input type="text" id="username-actual" name="username-actual" value="***********" disabled>
+
+                    <label for="password-actual">Clave:</label>
+                    <input type="password" id="password-actual" name="password-actual" value="***********" disabled>
+
+                    <label for="estado">Estado:</label>
+                    <div class="estado-buttons">
+                        <button type="button" class="estado-button habilitado">Habilitado</button>
+                        <button type="button" class="estado-button inhabilitado">Inhabilitado</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        function buscarUsuario() {
+            const input = document.getElementById('searchInput').value;
+            const userForm = document.getElementById('userForm');
+
+            if (input !== '') {
+                // Mostrar el formulario con datos quemados
+                userForm.style.display = 'block';
+            } else {
+                // Ocultar el formulario si no hay búsqueda
+                userForm.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
